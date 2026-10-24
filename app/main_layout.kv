@@ -21,7 +21,7 @@ MDScreen:
         MDTopAppBar:
             type: "small"
             theme_bg_color: "Custom"
-            md_bg_color: '#0a3580'
+            md_bg_color: '#2E2E2E'
             pos_hint: {"top": 1}
 
             MDTopAppBarLeadingButtonContainer:
@@ -37,8 +37,9 @@ MDScreen:
                     disabled: True
                     on_release: app.back_button_action()
             MDTopAppBarTitle:
-                text: "OpenSMS"
-                color: "white"
+                text: "CrossHubSMS"
+                theme_text_color: "Custom"
+                text_color: "#C89B3C"
             MDTopAppBarTrailingButtonContainer:
                 MDActionTopAppBarButton:
                     id: right_dot_menu

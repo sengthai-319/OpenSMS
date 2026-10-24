@@ -12,7 +12,7 @@ from services.postApi import PosiApiServer, set_config_path, set_api_os, set_api
 from services.logSvc import LogService
 
 # global vars
-app_name = "opensms"
+app_name = "crosshubsms"
 resp_template = {
     "server": "none",
 }

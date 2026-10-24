@@ -86,7 +86,7 @@ else:
 kv_file_path = os.path.join(base_path, 'main_layout.kv')
 
 ## Main App Class
-class OpenSmsApp(MDApp):
+class CrossHubSmsApp(MDApp):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -97,7 +97,7 @@ class OpenSmsApp(MDApp):
         self.key_exists = False
         self.api_key = None
         self.config_template = {
-            "app": "opensms",
+            "app": "crosshubsms",
             "port": 9292,
             "boot": False,
         }
@@ -107,7 +107,7 @@ class OpenSmsApp(MDApp):
         }
 
     def build(self):
-        self.theme_cls.primary_palette = "Blue"
+        self.theme_cls.primary_palette = "Amber"
         self.theme_cls.accent_palette = "Orange"
         return Builder.load_file(kv_file_path)
 
@@ -183,15 +183,15 @@ class OpenSmsApp(MDApp):
     def start_service(self):
         PythonActivity = autoclass('org.kivy.android.PythonActivity')
         mActivity = PythonActivity.mActivity
-        service = autoclass('in.daslearning.opensms.ServiceOpensmssvc')
+        service = autoclass('io.github.sengthai319.crosshubsms.ServiceCrosshubsmssvc')
         #argument = ''
         argument = os.environ.get('PYTHON_SERVICE_ARGUMENT', '')
         print(f"PYTHON_SERVICE_ARGUMENT: {argument}")
         #service.start(mActivity, argument)
-        service.start(mActivity, 'icon', 'OpenSMS API', 'Service Running' , argument)
+        service.start(mActivity, 'icon', 'CrossHubSMS API', 'Service Running' , argument)
 
     def stop_service(self):
-        service = autoclass('in.daslearning.opensms.ServiceOpensmssvc')
+        service = autoclass('io.github.sengthai319.crosshubsms.ServiceCrosshubsmssvc')
         PythonActivity = autoclass('org.kivy.android.PythonActivity')
         mActivity = PythonActivity.mActivity
         service.stop(mActivity)
@@ -460,7 +460,7 @@ class OpenSmsApp(MDApp):
             power_manager = cast(PowerManager, activity.getSystemService(Context.POWER_SERVICE))
             # Create wakelock (use PowerManager.FULL_WAKE_LOCK for full wakelock)
             self.wake_lock = power_manager.newWakeLock(
-                PowerManager.FULL_WAKE_LOCK, "OpenSmsApp::WakeLockTag"
+                PowerManager.FULL_WAKE_LOCK, "CrossHubSmsApp::WakeLockTag"
             )
             self.wake_lock.acquire()
             print("WakeLock acquired")
@@ -559,4 +559,4 @@ class OpenSmsApp(MDApp):
 
 
 if __name__ == '__main__':
-    OpenSmsApp().run()
+    CrossHubSmsApp().run()

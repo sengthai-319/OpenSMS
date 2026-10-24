@@ -41,7 +41,7 @@ class LogBox(MDBoxLayout):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.app_name = "opensms"
+        self.app_name = "crosshubsms"
         self.top_menu_items = {
             "Refresh": {
                 "icon": "refresh",

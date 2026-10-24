@@ -1,0 +1,9 @@
+CrossHubSMS
+Copyright © 2026 sengthai-319
+
+This product is a modified fork of OpenSMS
+(https://github.com/daslearning-org/OpenSMS),
+Copyright © 2026 daslearning.in, licensed under the Apache License, Version 2.0.
+
+Changes from the original include rebranding (name, logo, app identifiers)
+and iPhone support through a macOS Messages relay.
