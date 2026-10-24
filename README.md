@@ -12,7 +12,7 @@
 ## 🧑‍💻 Quickstart Guide
 
 ### 📱 Download & Run the Android App
-1. You can check the [Releases](https://github.com/sengthai-319/OpenSMS/releases) and downlaod the latest version of the android app on your phone.
+1. You can check the [Releases](https://github.com/sengthai-319/CrossHubSMS/releases) and download the latest version of the android app on your phone.
 2. You may need to disable (temporarily) `Play Protect` from your `Play Store` settings.
 3. Install the App & launch.
 4. Grant the permissions.
@@ -29,8 +29,8 @@ iOS does not let apps send SMS silently or keep a server running in the backgrou
 3. On the Mac, open `Messages` and send one SMS by hand to make sure forwarding works.
 4. Install and run the app on the Mac:
     ```bash
-    git clone https://github.com/sengthai-319/OpenSMS.git
-    cd OpenSMS/app
+    git clone https://github.com/sengthai-319/CrossHubSMS.git
+    cd CrossHubSMS/app
     python3 -m venv .env
     source .env/bin/activate
     pip install -r requirements.txt
@@ -83,8 +83,8 @@ java -version
 javac -version
 
 # install python modules
-git clone https://github.com/sengthai-319/OpenSMS.git
-cd OpenSMS/app
+git clone https://github.com/sengthai-319/CrossHubSMS.git
+cd CrossHubSMS/app
 python3 -m venv .env # create python virtual environment
 source .env/bin/activate
 pip install -r req_android.txt
