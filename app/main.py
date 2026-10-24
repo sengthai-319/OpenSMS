@@ -107,7 +107,7 @@ class CrossHubSmsApp(MDApp):
         }
 
     def build(self):
-        self.theme_cls.primary_palette = "Indigo"
+        self.theme_cls.primary_palette = "Amber"
         self.theme_cls.accent_palette = "Orange"
         return Builder.load_file(kv_file_path)
 
