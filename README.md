@@ -1,43 +1,35 @@
-<p align="center"><img width="20%" src="app/data/images/favicont512.png" /></p>
+<p align="center"><img width="20%" src="docs/images/logo.svg" alt="CrossHubSMS logo" /></p>
 
-# 📨 OpenSMS
-An open-source solution to host a `SMS` API server locally.
+<h1 align="center">CrossHubSMS</h1>
+<p align="center">Your phone as a private SMS API server — on Android, or on iPhone through a Mac.</p>
 
-### 🤔 Why would you choose our app? (Features)
-👉 Turns your `Android` phone into a SMS API server. <br>
-👉 Works with an `iPhone` too, through a Mac (see [Using an iPhone](#-using-an-iphone-via-a-mac)). <br>
-👉 Open-source, No advertisements and privacy focused.
-
-## 💰 Sponsor Me
-You can buy me a coffee via [this link](https://www.paypal.com/paypalme/soomnathsdas) or tap on below image. Thank you 🙏. <br>
-<a href="https://www.paypal.com/paypalme/soomnathsdas"><img src="./docs/images/donate.svg" height="40"></a>
-
-## 📽️ Demo
-You can click on the below Image or this [Youtube Link](https://www.youtube.com/watch?v=wNXH_3onjfg) to see the demo. Please let me know in the comments, how do you feel about this App. <br>
-
-<a href="https://www.youtube.com/watch?v=wNXH_3onjfg"><img src="docs/images/OpenSmsThumb.webp" width="70%"></a>
+## ✨ Features
+👉 Send SMS from any script or service with one authenticated `POST` request. <br>
+👉 Runs on `Android` directly, or with an `iPhone` through a Mac (see [Using an iPhone](#-using-an-iphone-via-a-mac)). <br>
+👉 Runs on your local network. Open-source, no ads, no third-party cloud. <br>
+👉 API keys are stored hashed, and every request is logged in the app.
 
 ## 🧑‍💻 Quickstart Guide
 
 ### 📱 Download & Run the Android App
-1. You can check the [Releases](https://github.com/daslearning-org/OpenSMS/releases) and downlaod the latest version of the android app on your phone.
+1. You can check the [Releases](https://github.com/sengthai-319/OpenSMS/releases) and downlaod the latest version of the android app on your phone.
 2. You may need to disable (temporarily) `Play Protect` from your `Play Store` settings.
 3. Install the App & launch.
 4. Grant the permissions.
-5. Android might block `sms` permission. Go to `Settings` > `Apps` > `OpenSMS` > Tap on three vertical-dots at top-right corner > `Allow restricted access`.
+5. Android might block `sms` permission. Go to `Settings` > `Apps` > `CrossHubSMS` > Tap on three vertical-dots at top-right corner > `Allow restricted access`.
 6. Then grant `SMS` permission from the settings window.
 7. Relaunch the app. 
 8. Click `Start Server`. It will then prompt you to generate an API Key for the first time. Generate and store it securely.
 
 ### 🍎 Using an iPhone (via a Mac)
-iOS does not let apps send SMS silently or keep a server running in the background, so OpenSMS can't run on the iPhone itself. Instead, run OpenSMS on a Mac: it sends each message through the `Messages` app, and your iPhone delivers it as a regular SMS using `Text Message Forwarding`.
+iOS does not let apps send SMS silently or keep a server running in the background, so CrossHubSMS can't run on the iPhone itself. Instead, run CrossHubSMS on a Mac: it sends each message through the `Messages` app, and your iPhone delivers it as a regular SMS using `Text Message Forwarding`.
 
 1. Sign in to the same Apple Account on your iPhone and Mac, in `Messages` on both.
 2. On the iPhone, go to `Settings` > `Apps` > `Messages` > `Text Message Forwarding` and turn on your Mac. (On older iOS: `Settings` > `Messages` > `Text Message Forwarding`.)
 3. On the Mac, open `Messages` and send one SMS by hand to make sure forwarding works.
 4. Install and run the app on the Mac:
     ```bash
-    git clone https://github.com/daslearning-org/OpenSMS.git
+    git clone https://github.com/sengthai-319/OpenSMS.git
     cd OpenSMS/app
     python3 -m venv .env
     source .env/bin/activate
@@ -57,13 +49,13 @@ Find the network address of your device and you may test out the API. Sample giv
 curl -i -X POST 'http://127.0.0.1:9292/sms/' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer my-secret-api-key' \
-    -d '{"number": "+1234567890", "text": "Hello from OpenSMS API!"}'
+    -d '{"number": "+1234567890", "text": "Hello from CrossHubSMS!"}'
 ```
 
 ## 📚 Tech Stack Used
 
 ### Python stack
-It works on `Android` and will bring this to `Linux` & `Windows` too.
+It runs on `Android`, and on `macOS` to send through a paired iPhone.
 - [FastAPI](https://github.com/fastapi/fastapi) for the API layer.
 - [KivyMD](https://github.com/kivymd/kivymd) and few [Kivy](https://github.com/kivy) components for the UI and building the app.
 
@@ -91,7 +83,7 @@ java -version
 javac -version
 
 # install python modules
-git clone https://github.com/daslearning-org/OpenSMS.git
+git clone https://github.com/sengthai-319/OpenSMS.git
 cd OpenSMS/app
 python3 -m venv .env # create python virtual environment
 source .env/bin/activate
@@ -108,3 +100,8 @@ buildozer android debug # this may take a good amount of time for the first time
 sudo apt install libcairo2-dev pkg-config python3-dev
 sudo apt-get install libjpeg-dev zlib1g-dev
 ```
+
+-----
+
+## 🙏 Credits
+CrossHubSMS is a fork of [OpenSMS](https://github.com/daslearning-org/OpenSMS) by [daslearning-org](https://github.com/daslearning-org), used under the [Apache License 2.0](LICENSE). See [NOTICE](NOTICE) for details.

@@ -6,13 +6,13 @@
 [app]
 
 # (str) Title of your application
-title = OpenSMS
+title = CrossHubSMS
 
 # (str) Package name
-package.name = opensms
+package.name = crosshubsms
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = in.daslearning
+package.domain = io.github.sengthai319
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -84,7 +84,7 @@ requirements = python3,
 #presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/data/images/favicont512.png
+icon.filename = %(source.dir)s/data/images/logo512.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse, landscape-reverse, or all
@@ -97,7 +97,7 @@ orientation = all
 # launched. This is optionally followed by ":foreground" for foreground services or
 # ":foreground:sticky" for sticky foreground services. The default is a background service.
 # Bound services are not supported.
-services = opensmssvc:services/appSvc.py:foreground:foregroundServiceType=dataSync
+services = crosshubsmssvc:services/appSvc.py:foreground:foregroundServiceType=dataSync
 
 #
 # OSX Specific

@@ -18,7 +18,7 @@ from services.pathMgr import get_user_data_dir
 from services.logSvc import LogService
 
 ## global vars / obj
-app_name = "opensms"
+app_name = "crosshubsms"
 platform = "linux"
 logger = None
 
@@ -56,12 +56,12 @@ def hash_api_key(raw_key: str) -> str:
 def generate_new_api_key() -> str:
     # Generate a high-entropy secret token
     new_raw_key = secrets.token_urlsafe(32)
-    new_raw_key = f"osms_{new_raw_key}"
+    new_raw_key = f"chsms_{new_raw_key}"
     # Hash and store in your DB
     new_hashed_key = hash_api_key(new_raw_key)
     app_api_keys = {
         new_hashed_key: {
-            "name": "opensms",
+            "name": "crosshubsms",
             "scopes": ["sms:write"]
         }
     }
