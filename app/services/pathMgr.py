@@ -4,7 +4,7 @@ from pathlib import Path
 
 def get_user_data_dir(app_name: str) -> Path:
     """
-    Returns a safe, user-specific data directory for Linux and Windows.
+    Returns a safe, user-specific data directory for Linux, macOS and Windows.
     Creates the directory if it does not already exist.
     """
     home = Path.home()
@@ -16,6 +16,10 @@ def get_user_data_dir(app_name: str) -> Path:
             data_dir = Path(base_dir) / app_name
         else:
             data_dir = home / "AppData" / "Local" / app_name
+
+    elif sys.platform == "darwin":
+        # macOS standard: ~/Library/Application Support
+        data_dir = home / "Library" / "Application Support" / app_name
 
     else:
         # Linux / Unix standard: XDG_DATA_HOME (or fallback to ~/.local/share)

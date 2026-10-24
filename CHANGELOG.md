@@ -2,6 +2,10 @@
 
 ## Changes
 
+### Unreleased
+- iPhone support through a Mac: on macOS, SMS are sent through the Messages app and delivered by the paired iPhone (Text Message Forwarding)
+- macOS app data is now stored in `~/Library/Application Support/opensms`
+
 ### 0.1.1
 - Fixing app crash on some mobile GPU with kivymd 2.x . Thanks to [DorDeorz](https://github.com/DorDeorz) for the fix in [UniversalDownlaoder](https://github.com/DorDeorz/UniversalDownloader).
 

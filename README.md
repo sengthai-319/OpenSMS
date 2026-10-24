@@ -5,6 +5,7 @@ An open-source solution to host a `SMS` API server locally.
 
 ### 🤔 Why would you choose our app? (Features)
 👉 Turns your `Android` phone into a SMS API server. <br>
+👉 Works with an `iPhone` too, through a Mac (see [Using an iPhone](#-using-an-iphone-via-a-mac)). <br>
 👉 Open-source, No advertisements and privacy focused.
 
 ## 💰 Sponsor Me
@@ -27,6 +28,27 @@ You can click on the below Image or this [Youtube Link](https://www.youtube.com/
 6. Then grant `SMS` permission from the settings window.
 7. Relaunch the app. 
 8. Click `Start Server`. It will then prompt you to generate an API Key for the first time. Generate and store it securely.
+
+### 🍎 Using an iPhone (via a Mac)
+iOS does not let apps send SMS silently or keep a server running in the background, so OpenSMS can't run on the iPhone itself. Instead, run OpenSMS on a Mac: it sends each message through the `Messages` app, and your iPhone delivers it as a regular SMS using `Text Message Forwarding`.
+
+1. Sign in to the same Apple Account on your iPhone and Mac, in `Messages` on both.
+2. On the iPhone, go to `Settings` > `Apps` > `Messages` > `Text Message Forwarding` and turn on your Mac. (On older iOS: `Settings` > `Messages` > `Text Message Forwarding`.)
+3. On the Mac, open `Messages` and send one SMS by hand to make sure forwarding works.
+4. Install and run the app on the Mac:
+    ```bash
+    git clone https://github.com/daslearning-org/OpenSMS.git
+    cd OpenSMS/app
+    python3 -m venv .env
+    source .env/bin/activate
+    pip install -r requirements.txt
+    python main.py
+    ```
+5. Click `Start Server` and generate an API key.
+6. When you send the first SMS, macOS will ask to let `Terminal` (or Python) control `Messages`. Click `Allow`. If you dismissed the prompt, enable it under `System Settings` > `Privacy & Security` > `Automation`.
+7. Keep the Mac awake (for example `caffeinate -i python main.py`), and keep the iPhone on the same Apple Account with a cellular signal.
+
+> Note: `"stat": true` means `Messages` accepted the message. Delivery is then handled by the iPhone. If the iPhone is off or out of range, the message waits in `Messages` on the Mac.
 
 ### 🧪 Test API endpoint
 Find the network address of your device and you may test out the API. Sample given below.
